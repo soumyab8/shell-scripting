@@ -7,4 +7,4 @@ echo "Howdy"
 echo "Hola"
 
 echo -e "Hi\nHello"
-echo ""
+echo "bye"
