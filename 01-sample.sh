@@ -6,4 +6,4 @@ echo "hai"
 echo "Howdy"
 echo "Hola"
 
-echo -e "Hi\n\tHello"
+echo -e "Hi\n\Hello"
