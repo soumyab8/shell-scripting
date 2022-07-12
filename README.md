@@ -9,3 +9,5 @@ In Linux, we have lot of terminals:
 2) Shell
 3) ZSH
 4) Korn
+
+Some error is happening
