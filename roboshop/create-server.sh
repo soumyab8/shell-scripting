@@ -10,9 +10,7 @@ AMI_ID=$(aws ec2 describe-images --filters "Name=name,Values=CloudDevOps-LabImag
 echo $AMI_ID
 echo "creating $COMPONENT server"
 
-aws ec2 run-instances --security-group-ids $SGID --image-id $AMI_ID --instance-type t2.micro --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}}]" | jq 
-
-PRIVATE_IP=$(aws ec2 describe-images --filters "Name=name,Values=CloudDevOps-LabImage-CentOS7" | jq '.Instances[].PrivateIPAddress' | sed -e 's/"//g')
+PRIVATE_IP=$(aws ec2 run-instances --security-group-ids $SGID --image-id $AMI_ID --instance-type t2.micro --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}}]" | jq '.Instances[].PrivateIPAddress' | sed -e 's/"//g')
 
 echo $PRIVATE_IP
 
