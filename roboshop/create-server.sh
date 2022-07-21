@@ -11,7 +11,7 @@ if [ "$1" = "" ] ; then
 fi 
 
 COMPONENT=$1
-SGID="sg-0bf27dd0bb525e6b9"
+SGID="sg-07448acb825353d77"
 AMI_ID=$(aws ec2 describe-images  --filters "Name=name,Values=CloudDevOps-LabImage-CentOS7" | jq '.Images[].ImageId' | sed -e 's/"//g')
 echo $AMI_ID 
 
