@@ -6,6 +6,6 @@
                 "Name": "COMPONENT.b49-roboshop.internal",
                 "Type": "A",
                 "TTL": 10,
-                "ResourceRecords": [{"Value":"IPADDRESS"}]
+                "ResourceRecords": [{ "Value": "IPADDRESS"}]
     }}]
 }
