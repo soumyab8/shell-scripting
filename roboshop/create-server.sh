@@ -15,5 +15,5 @@ PRIVATE_IP=$(aws ec2 run-instances --security-group-ids $SGID --image-id $AMI_ID
 echo $PRIVATE_IP
 
 #changing ipaddress and dnsname of the component
-sed -e 's/IPADDRESS/${PRIVATE_IP}'/ -e 's/COMPONENT/${COMPONENT}/' route53.json > /tmp/record.json
+sed -e "s/IPADDRESS/${PRIVATE_IP}/" -e "s/COMPONENT/${COMPONENT}/" route53.json > /tmp/record.json
 aws route53 change-resource-record-sets --hosted-zone-id Z004065932CWFU39T8EKD --change-batch file:///tmp/record.json | jq
