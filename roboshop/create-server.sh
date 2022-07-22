@@ -21,7 +21,7 @@ create_server() {
 
     # # Changing the IP Address and DNS Name as per the component
     sed -e "s/IPADDRESS/${PRIVATE_IP}/" -e "s/COMPONENT/${COMPONENT}/" route53.json > /tmp/record.json 
-    aws route53 change-resource-record-sets --hosted-zone-id Z004065932CWFU39T8EKD --change-batch file:///tmp/record.json | jq 
+    aws route53 change-resource-record-sets --hosted-zone-id Z0940940K44ATXKZNQY8 --change-batch file:///tmp/record.json | jq 
 }
 
 if [ "$1" == "all" ]; then 
