@@ -5,12 +5,13 @@
 # Throw an error if the input is null 
 # Disclaimer: This script works on CENTOS7 Only
 
-if [ "$1" = "" ] ; then 
+if [ "$1" = "" ] | [ "$2" = "" ]; then 
     echo -e "\e[31m Valid options are component -name or all \e[0m "
     exit 1
 fi 
 
 COMPONENT=$1
+ENV=$2
 SGID="sg-07448acb825353d77"
 # AMI_ID=$(aws ec2 describe-images  --filters "Name=name,Values=CloudDevOps-LabImage-CentOS7" | jq '.Images[].ImageId' | sed -e 's/"//g')
 AMI_ID="ami-02926265e8fd1ddc8"
